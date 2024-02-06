@@ -1,0 +1,9 @@
+Tunnel horror game
+- You have to make it down a tunnel while avoiding anomalies
+
+Rules
+- Turning around at any point will kill you
+
+Story
+- Anomalies exist because of a malfunction in a machine
+- You are tasked with making it down the tunnel to reset the machine
