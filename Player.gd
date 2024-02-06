@@ -13,9 +13,11 @@ const sprint_speed: float = 5.0
 var current_stamina: float = 100.0
 var max_stamina: float = 100.0
 var stamina_depletion_speed: float = 27.0
-var stamina_regen_speed: float = 8.0
+var stamina_regen_speed: float = 15.0
 
-var lerp_speed: float = 100.0
+var lerp_speed: float = 15.0
+var bopping_frequency: float = 12.0
+var bopping_time: float = 0.0
 
 const mouse_sens: float = 0.25
 
@@ -23,10 +25,6 @@ var direction: Vector3 = Vector3.ZERO
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-
-func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _input(event: InputEvent) -> void:
@@ -42,10 +40,12 @@ func _physics_process(delta: float) -> void:
 		current_speed = sprint_speed
 		current_stamina -= stamina_depletion_speed * delta
 		walk_audio_player.pitch_scale = 1.3
+		bopping_frequency = 20
 	else:
 		current_speed = walking_speed
 		if current_stamina <= 100: current_stamina += stamina_regen_speed * delta
 		walk_audio_player.pitch_scale = 0.9
+		bopping_frequency = 12
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "foward", "backward")
 	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerp_speed)
+
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
@@ -64,7 +65,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Walking sound
 	if direction.length() > 0.8 and is_on_floor() and not ray.is_colliding():
+		# Head bobbing
+		bopping_time += delta
+		head.position.y += sin(bopping_time * bopping_frequency) / 50
 		if !walk_audio_player.playing:
 			walk_audio_player.play()
+	else:
+		lerp(head.position.y, 0.0, delta * lerp_speed)
 	
 	move_and_slide()

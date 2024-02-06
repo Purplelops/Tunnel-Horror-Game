@@ -4,7 +4,9 @@
 ssao_enabled = true
 ssao_radius = 0.5
 ssil_enabled = true
-fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.3
-volumetric_fog_density = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2862
+volumetric_fog_length = 48.94
+volumetric_fog_ambient_inject = 0.72
