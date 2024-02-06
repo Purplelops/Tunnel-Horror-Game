@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		walk_audio_player.pitch_scale = 1.3
 	else:
 		current_speed = walking_speed
-		current_stamina += stamina_regen_speed * delta
+		if current_stamina <= 100: current_stamina += stamina_regen_speed * delta
 		walk_audio_player.pitch_scale = 0.9
 	
 	# Add the gravity.

@@ -6,4 +6,6 @@ Rules
 
 Story
 - Anomalies exist because of a malfunction in a machine
-- You are tasked with making it down the tunnel to reset the machine
+- You are tasked with making it down the tunnel to reset the object
+- The object is a stabilizer of the collective conciousness of humanity
+- The thing that stabilizes the object is the concept of not knowing what it is

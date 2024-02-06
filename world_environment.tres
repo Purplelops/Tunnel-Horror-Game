@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://c0jksnj23v1qd"]
+
+[resource]
+ssao_enabled = true
+ssao_radius = 0.5
+ssil_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.3
+volumetric_fog_density = 0.2
