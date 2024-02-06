@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfx8vhpoidb7k"
-path.bptc="res://.godot/imported/texture_03.png-33f0350613b2a75cae03f0ea965dce05.bptc.ctex"
+uid="uid://bnpy8ht0cxg86"
+path.s3tc="res://.godot/imported/Photoreal_Concrete_08-512x512.png-63f1cdea7f6baafa67748a8049ace866.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://texture_03.png"
-dest_files=["res://.godot/imported/texture_03.png-33f0350613b2a75cae03f0ea965dce05.bptc.ctex"]
+source_file="res://Textures/Photoreal_Concrete_08-512x512.png"
+dest_files=["res://.godot/imported/Photoreal_Concrete_08-512x512.png-63f1cdea7f6baafa67748a8049ace866.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

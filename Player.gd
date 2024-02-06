@@ -1,6 +1,10 @@
 extends CharacterBody3D
 
+signal died
+
 @onready var head: Node3D = $Head
+@onready var walk_audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var ray: RayCast3D = $Head/RayCast3D
 
 var current_speed: float
 const walking_speed: float = 3.0
@@ -37,15 +41,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("sprint") and current_stamina > 0:
 		current_speed = sprint_speed
 		current_stamina -= stamina_depletion_speed * delta
-		$AudioStreamPlayer3D.pitch_scale = 1.3
+		walk_audio_player.pitch_scale = 1.3
 	else:
 		current_speed = walking_speed
 		current_stamina += stamina_regen_speed * delta
-		$AudioStreamPlayer3D.pitch_scale = 1
-	
-	# Exit
-	if Input.is_action_pressed("quit"):
-		get_tree().quit()
+		walk_audio_player.pitch_scale = 0.9
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 	
 	if direction.length() > 0.8 and is_on_floor():
-		if !$AudioStreamPlayer3D.playing:
-			$AudioStreamPlayer3D.play()
+		if !walk_audio_player.playing:
+			walk_audio_player.play()
 	
 	move_and_slide()

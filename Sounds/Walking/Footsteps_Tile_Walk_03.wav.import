@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dkpdw764imcqg"
-path="res://.godot/imported/Footsteps_Tile_Walk_03.wav-f46fdddccf6c11136eab385e619d6828.sample"
+path="res://.godot/imported/Footsteps_Tile_Walk_03.wav-fc3d16cc8cd5a17a53a235fc392c5eaa.sample"
 
 [deps]
 
-source_file="res://Sounds/Walk/Footsteps_Tile_Walk_03.wav"
-dest_files=["res://.godot/imported/Footsteps_Tile_Walk_03.wav-f46fdddccf6c11136eab385e619d6828.sample"]
+source_file="res://Sounds/Walking/Footsteps_Tile_Walk_03.wav"
+dest_files=["res://.godot/imported/Footsteps_Tile_Walk_03.wav-fc3d16cc8cd5a17a53a235fc392c5eaa.sample"]
 
 [params]
 

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c834ibnt1ofnm"]
+
+[ext_resource type="Texture2D" uid="uid://bnpy8ht0cxg86" path="res://Textures/Photoreal_Concrete_08-512x512.png" id="1_u7hvb"]
+
+[resource]
+albedo_color = Color(0.419608, 0.419608, 0.419608, 1)
+albedo_texture = ExtResource("1_u7hvb")
+uv1_triplanar = true
